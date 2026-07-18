@@ -1,7 +1,7 @@
 <html lang="ar" dir="rtl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1114">
-    <title>المشغل الرياضي الشامل</title>
+    <title>المشغل</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -264,13 +264,13 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="manifest" href="./manifest.json?v=v1784340188870">
-    <meta name="theme-color" content="#b774be">
-    <link rel="apple-touch-icon" href="./icon-192.png?v=v1784340188870">
+    <link rel="manifest" href="./manifest.json?v=v1784410576373">
+    <meta name="theme-color" content="#bc76b1">
+    <link rel="apple-touch-icon" href="./icon-192.png?v=v1784410576373">
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=v1784340188870')
+          navigator.serviceWorker.register('./sw.js?v=v1784410576373')
             .then(reg => console.log('SW Registered'))
             .catch(err => console.log('SW Failed', err));
         });
@@ -2235,15 +2235,41 @@ window.showDeepScanModal = function(links) {
 
     content.appendChild(listContainer);
 
+    // الحاوية الخاصة بالأزرار السفلية
+    let bottomActions = document.createElement("div");
+    bottomActions.style.cssText = "display:flex; justify-content:center; gap:15px; margin-top:10px;";
+
+    // زرار نسخ كل الروابط
+    let copyAllBtn = document.createElement("button");
+    copyAllBtn.innerHTML = "📋 نسخ كل الروابط";
+    copyAllBtn.style.cssText = "background:#8e44ad; color:white; border:none; padding:10px 30px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:16px; transition:0.3s;";
+    copyAllBtn.onmouseover = () => copyAllBtn.style.background = "#9b59b6";
+    copyAllBtn.onmouseout = () => copyAllBtn.style.background = "#8e44ad";
+    copyAllBtn.onclick = () => {
+        let allLinksText = links.map(item => item.link).join('\n');
+        navigator.clipboard.writeText(allLinksText).then(() => {
+            let oldText = copyAllBtn.innerHTML;
+            copyAllBtn.innerHTML = "✅ تم نسخ الكل";
+            copyAllBtn.style.background = "#2ecc71";
+            setTimeout(() => {
+                copyAllBtn.innerHTML = oldText;
+                copyAllBtn.style.background = "#8e44ad";
+            }, 2000);
+        }).catch(err => alert("حدث خطأ أثناء النسخ!"));
+    };
+
     // زرار الإغلاق الأحمر
     let closeBtn = document.createElement("button");
-    closeBtn.innerHTML = "إغلاق";
-    closeBtn.style.cssText = "background:#e74c3c; color:white; border:none; padding:10px 40px; border-radius:8px; font-weight:bold; cursor:pointer; align-self:center; font-size:16px; transition:0.3s;";
+    closeBtn.innerHTML = "✖ إغلاق";
+    closeBtn.style.cssText = "background:#e74c3c; color:white; border:none; padding:10px 40px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:16px; transition:0.3s;";
     closeBtn.onmouseover = () => closeBtn.style.background = "#c0392b";
     closeBtn.onmouseout = () => closeBtn.style.background = "#e74c3c";
     closeBtn.onclick = () => modal.remove();
 
-    content.appendChild(closeBtn);
+    bottomActions.appendChild(copyAllBtn);
+    bottomActions.appendChild(closeBtn);
+
+    content.appendChild(bottomActions);
     modal.appendChild(content);
     document.body.appendChild(modal);
 };
