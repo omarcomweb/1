@@ -1,5 +1,5 @@
-const CACHE_NAME = 'pwa-cache-v1784338140414';
-const urlsToCache = [ './', './index.html?v=v1784338140414', './offline.html?v=v1784338140414', './icon-192.png?v=v1784338140414', './icon-512.png?v=v1784338140414', './manifest.json?v=v1784338140414' ];
+const CACHE_NAME = 'pwa-cache-v1784340188870';
+const urlsToCache = [ './', './index.html?v=v1784340188870', './offline.html?v=v1784340188870', './icon-192.png?v=v1784340188870', './icon-512.png?v=v1784340188870', './manifest.json?v=v1784340188870' ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -29,7 +29,7 @@ self.addEventListener('fetch', event => {
       .then(response => {
         return response || fetch(event.request).catch(() => {
           if (event.request.mode === 'navigate') {
-            return caches.match('./offline.html?v=v1784338140414');
+            return caches.match('./offline.html?v=v1784340188870');
           }
         });
       })

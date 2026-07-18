@@ -136,7 +136,7 @@
             font-weight: bold; 
         }
 
-        /* ستايلات النوافذ (المودال) المخصصة */
+        /* ستايلات النوافذ (المودال) المخصصة - مع تفعيل السكرول */
         #custom-edit-modal, #multi-manage-modal { 
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
             background: rgba(0,0,0,0.85); z-index: 100000; justify-content: center; align-items: center; 
@@ -144,9 +144,11 @@
         }
         .edit-modal-content { 
             background: #1e272e; padding: 25px; border-radius: 12px; border: 2px solid #f1c40f; 
-            width: 90%; max-width: 450px; color: white; display: flex; flex-direction: column; gap: 15px; 
+            width: 90%; max-width: 450px; max-height: 85vh; overflow-y: auto; color: white; display: flex; flex-direction: column; gap: 15px; 
             box-shadow: 0 0 25px rgba(0,0,0,0.7); 
         }
+        .edit-modal-content::-webkit-scrollbar { width: 8px; }
+        .edit-modal-content::-webkit-scrollbar-thumb { background: #555; border-radius: 5px; }
         .edit-modal-content h3 { margin: 0; text-align: center; color: #f1c40f; font-size: 20px; }
         .edit-modal-content label { font-size: 14px; font-weight: bold; color: #aaa; margin-bottom: 5px; display: block; }
         .edit-modal-content input, .edit-modal-content select { 
@@ -262,13 +264,13 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="manifest" href="./manifest.json?v=v1784338140414">
-    <meta name="theme-color" content="#b71584">
-    <link rel="apple-touch-icon" href="./icon-192.png?v=v1784338140414">
+    <link rel="manifest" href="./manifest.json?v=v1784340188870">
+    <meta name="theme-color" content="#b774be">
+    <link rel="apple-touch-icon" href="./icon-192.png?v=v1784340188870">
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=v1784338140414')
+          navigator.serviceWorker.register('./sw.js?v=v1784340188870')
             .then(reg => console.log('SW Registered'))
             .catch(err => console.log('SW Failed', err));
         });
