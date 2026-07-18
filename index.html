@@ -262,13 +262,13 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="manifest" href="./manifest.json?v=v1784313299088">
-    <meta name="theme-color" content="#726ac8">
-    <link rel="apple-touch-icon" href="./icon-192.png?v=v1784313299088">
+    <link rel="manifest" href="./manifest.json?v=v1784338140414">
+    <meta name="theme-color" content="#b71584">
+    <link rel="apple-touch-icon" href="./icon-192.png?v=v1784338140414">
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=v1784313299088')
+          navigator.serviceWorker.register('./sw.js?v=v1784338140414')
             .then(reg => console.log('SW Registered'))
             .catch(err => console.log('SW Failed', err));
         });
@@ -278,55 +278,58 @@
 <body class="">
 
     <ul class="aplr-menu" id="top-bar" style="background: rgb(60, 9, 108);">
-        <li class="static-item">
-          <button id="menu-btn" style="background: #555;" onclick="window.toggleMenuList()">☰</button>
-        </li>
-        <li class="static-item">
-          <button style="background: #8e44ad;" onclick="window.openMultiManageModal()">🛠️ إدارة وتحديد</button><button class="btn" style="border-color:#a29bfe; color:#a29bfe;" onclick="window.prevChannel()">السابقة 🔼</button>
-<button class="btn" style="border-color:#a29bfe; color:#a29bfe;" onclick="window.nextChannel()">التالية 🔽</button><button class="btn btn-outline" onclick="window.openExternal()">↗️ فتح خارجي</button><button class="aplr-link" onclick="window.openPlayerFullscreen()" style="background: #3498db;">⛶ شاشة كاملة</button><button class="aplr-link" onclick="window.closePlayerScreen()" style="background: #e74c3c;">✖ إغلاق الشاشة</button>
-        </li>
         
-        <li class="static-item" id="extra-menu-items" style="display: none; align-items: center; gap: 8px;">
-            <button id="dashboard-btn" class="aplr-link" style="background: #e50914;" onclick="window.openDashboard()">Dashboard</button>
-            <button id="login-btn" class="aplr-link" style="background: rgb(229, 9, 20); display: none;" onclick="window.adminLogin()">🔐 دخول الآدمن</button>
+        <div style="display: flex; gap: 8px; align-items: center; position: sticky; right: 0px; background: inherit; z-index: 9999; margin-top: -10px; margin-bottom: -10px; margin-right: -10px; padding-top: 10px; padding-bottom: 10px; padding-right: 10px; padding-left: 10px; box-shadow: -5px 0 15px rgba(0,0,0,0.4);">
+            <li class="static-item">
+              <button id="menu-btn" style="background: #555;" onclick="window.toggleMenuList()">☰</button>
+            </li>
+            <li class="static-item" style="display: flex; gap: 8px;">
+              <button style="background: #8e44ad;" onclick="window.openMultiManageModal()">🛠️ إدارة وتحديد</button><button class="btn" style="border-color:#a29bfe; color:#a29bfe;" onclick="window.prevChannel()">السابقة 🔼</button>
+    <button class="btn" style="border-color:#a29bfe; color:#a29bfe;" onclick="window.nextChannel()">التالية 🔽</button><button class="btn btn-outline" onclick="window.openExternal()">↗️ فتح خارجي</button><button class="aplr-link" onclick="window.openPlayerFullscreen()" style="background: #3498db;">⛶ شاشة كاملة</button><button class="aplr-link" onclick="window.closePlayerScreen()" style="background: #e74c3c;">✖ إغلاق الشاشة</button>
+            </li>
             
-            <span id="visitor-counter-display" style="color: #00a8ff; font-weight: bold; background: #222; padding: 8px 12px; border-radius: 5px; border: 1px solid #00a8ff;">🟢 المتصلين الآن: 3</span>
+            <li class="static-item" id="extra-menu-items" style="display: none; align-items: center; gap: 8px;">
+                <button id="dashboard-btn" class="aplr-link" style="background: #e50914;" onclick="window.openDashboard()">Dashboard</button>
+                <button id="login-btn" class="aplr-link" style="background: rgb(229, 9, 20); display: none;" onclick="window.adminLogin()">🔐 دخول الآدمن</button>
+                
+                <span id="visitor-counter-display" style="color: #00a8ff; font-weight: bold; background: #222; padding: 8px 12px; border-radius: 5px; border: 1px solid #00a8ff;">🟢 المتصلين الآن: 3</span>
 
-            <button class="aplr-link" onclick="window.toggleMobileRotation()" style="background: #27ae60;">📱 تدوير</button>
-            <button class="aplr-link" onclick="window.openPlayerFullscreen()" style="background: #3498db;">⛶ شاشة كاملة</button>
+                <button class="aplr-link" onclick="window.toggleMobileRotation()" style="background: #27ae60;">📱 تدوير</button>
+                <button class="aplr-link" onclick="window.openPlayerFullscreen()" style="background: #3498db;">⛶ شاشة كاملة</button>
 
-            <button class="aplr-link" id="btn-super-blocker" onclick="window.toggleSuperBlocker()" style="background: rgb(192, 57, 43); color: rgb(255, 255, 255);">⚠️ الحماية القصوى (معطل)</button>
+                <button class="aplr-link" id="btn-super-blocker" onclick="window.toggleSuperBlocker()" style="background: rgb(192, 57, 43); color: rgb(255, 255, 255);">⚠️ الحماية القصوى (معطل)</button>
 
-            <button class="aplr-link" onclick="window.toggleSplitScreen()" style="background: #34495e;">🔲 تقسيم الشاشة</button>
-            <button id="record-btn" class="aplr-link" onclick="window.toggleRecording()" style="background: #c0392b;">🔴 تسجيل</button>
+                <button class="aplr-link" onclick="window.toggleSplitScreen()" style="background: #34495e;">🔲 تقسيم الشاشة</button>
+                <button id="record-btn" class="aplr-link" onclick="window.toggleRecording()" style="background: #c0392b;">🔴 تسجيل</button>
 
-            <button class="aplr-link" onclick="window.closePlayerScreen()" style="background: #e74c3c;">✖ إغلاق الشاشة</button>
-            
-            <button id="btn-add-topbar" class="aplr-link" onclick="window.addTopBarChannel()" style="background: #e67e22;">➕ إضافة للشريط</button>
-            
-            <button id="btn-bulk-add" class="aplr-link" onclick="window.openBulkModal()" style="background: rgb(142, 68, 173); border-color: rgb(142, 68, 173); color: rgb(142, 68, 173);">➕ إضافة جماعية</button>
-            <button id="btn-extract-html" class="aplr-link" style="background: #1abc9c;" onclick="window.extractFromHTML()">📥 استخراج من HTML</button>
+                <button class="aplr-link" onclick="window.closePlayerScreen()" style="background: #e74c3c;">✖ إغلاق الشاشة</button>
+                
+                <button id="btn-add-topbar" class="aplr-link" onclick="window.addTopBarChannel()" style="background: #e67e22;">➕ إضافة للشريط</button>
+                
+                <button id="btn-bulk-add" class="aplr-link" onclick="window.openBulkModal()" style="background: rgb(142, 68, 173); border-color: rgb(142, 68, 173); color: rgb(142, 68, 173);">➕ إضافة جماعية</button>
+                <button id="btn-extract-html" class="aplr-link" style="background: #1abc9c;" onclick="window.extractFromHTML()">📥 استخراج من HTML</button>
 
-            <input type="text" id="search-bar" placeholder="🔍 بحث عن قناة..." style="width: 120px; border-radius: 15px; padding: 4px 10px; border: 1px solid #3498db;" onkeyup="window.filterChannels()" data-ddg-inputtype="unknown">
+                <input type="text" id="search-bar" placeholder="🔍 بحث عن قناة..." style="width: 120px; border-radius: 15px; padding: 4px 10px; border: 1px solid #3498db;" onkeyup="window.filterChannels()" data-ddg-inputtype="unknown">
 
-            <button class="aplr-link" onclick="window.addNewChannel()" style="background: #8e44ad;">📺 إضافة قناة</button>
-            <button class="aplr-link" onclick="window.addNewFolder()" style="background: #f39c12;">📁 إضافة فولدر</button>
+                <button class="aplr-link" onclick="window.addNewChannel()" style="background: #8e44ad;">📺 إضافة قناة</button>
+                <button class="aplr-link" onclick="window.addNewFolder()" style="background: #f39c12;">📁 إضافة فولدر</button>
 
-            <input type="text" id="direct-link-input" placeholder="رابط مباشر (M3U8 / iframe)..." style="width: 180px;" data-ddg-inputtype="unknown">
-            <button class="btn" style="border-color:#0984e3; color:#0984e3;" onclick="window.playDirectLink()">▶️ تشغيل سريع</button>
-            <button class="btn" id="btn-copy-current" style="border-color: rgb(46, 213, 115); color: rgb(46, 213, 115);" onclick="window.copyCurrentPlayingLink()">✅ تم النسخ</button>
+                <input type="text" id="direct-link-input" placeholder="رابط مباشر (M3U8 / iframe)..." style="width: 180px;" data-ddg-inputtype="unknown">
+                <button class="btn" style="border-color:#0984e3; color:#0984e3;" onclick="window.playDirectLink()">▶️ تشغيل سريع</button>
+                <button class="btn" id="btn-copy-current" style="border-color: rgb(46, 213, 115); color: rgb(46, 213, 115);" onclick="window.copyCurrentPlayingLink()">✅ تم النسخ</button>
 
-            <button class="btn" style="border-color:#a29bfe; color:#a29bfe;" onclick="window.prevChannel()">السابقة 🔼</button>
-            <button class="btn" style="border-color:#a29bfe; color:#a29bfe;" onclick="window.nextChannel()">التالية 🔽</button>
-            <button class="btn btn-outline" onclick="window.openExternal()">↗️ فتح خارجي</button>
-            <button class="btn btn-outline" onclick="window.toggleZenMode()">👁️ إخفاء الشرائط (Esc)</button>
-            
-            <div class="zoom-wrapper">
-                <button id="zoomInBtn" title="تكبير" onclick="window.changeZoom(0.1)">+</button>
-                <button id="zoomOutBtn" title="تصغير" onclick="window.changeZoom(-0.1)">-</button>
-                <button id="zoomResetBtn" title="الوضع الافتراضي" onclick="window.resetZoom()">100%</button>
-            </div>
-        </li>
+                <button class="btn" style="border-color:#a29bfe; color:#a29bfe;" onclick="window.prevChannel()">السابقة 🔼</button>
+                <button class="btn" style="border-color:#a29bfe; color:#a29bfe;" onclick="window.nextChannel()">التالية 🔽</button>
+                <button class="btn btn-outline" onclick="window.openExternal()">↗️ فتح خارجي</button>
+                <button class="btn btn-outline" onclick="window.toggleZenMode()">👁️ إخفاء الشرائط (Esc)</button>
+                
+                <div class="zoom-wrapper">
+                    <button id="zoomInBtn" title="تكبير" onclick="window.changeZoom(0.1)">+</button>
+                    <button id="zoomOutBtn" title="تصغير" onclick="window.changeZoom(-0.1)">-</button>
+                    <button id="zoomResetBtn" title="الوضع الافتراضي" onclick="window.resetZoom()">100%</button>
+                </div>
+            </li>
+        </div>
         
         <li class="static-item" style="display:flex; flex-wrap:nowrap;">
             <div id="dynamic-channels-list" style="display: flex; gap: 5px; align-items: center;"><button class="aplr-link playing-item" data-type="channel" data-name="افضل قناة" data-link="https://worldchampion.fun/welcome-4/" data-channel-idx="0" style="background: rgb(52, 73, 94);">افضل قناة</button><button class="aplr-link" data-type="channel" data-name="مواعييد" data-link="https://17webcom.github.io/all-kora-live/" data-channel-idx="1" style="background: rgb(52, 73, 94);">مواعييد</button><button class="aplr-link" data-type="channel" data-name="albaplayer" data-link="https://p1.paanda-hd.com/albaplayer/extra-1/" data-channel-idx="2" style="background: rgb(52, 73, 94);">albaplayer</button><button class="aplr-link" data-type="channel" data-name="Channel 1" data-link="https://y2.yallah.blog/albaplayer/b-1/" data-channel-idx="3" style="background: rgb(52, 73, 94);">Channel 1</button><button class="aplr-link" data-type="channel" data-name="1 القناة العامة الاولي" data-link="https://28.streemach.site/albaplayer/live1/?serv=1" data-channel-idx="4" style="background: rgb(52, 73, 94);">1 القناة العامة الاولي</button><button class="aplr-link" data-type="channel" data-name="@#34" data-link="https://live.bb6.dpdns.org/albaplayer/ch1/?serv=0" data-channel-idx="5" style="background: rgb(52, 73, 94);">@#34</button><button class="aplr-link" data-type="channel" data-name="ze-sport" data-link="https://ze-sport.com/" data-channel-idx="6" style="background: rgb(52, 73, 94);">ze-sport</button><button class="aplr-link" data-type="channel" data-name="قناة 5" data-link="https://roxiestreams.info/" data-channel-idx="7" style="background: rgb(52, 73, 94);">قناة 5</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://live.bb6.dpdns.org/albaplayer/ch2/?serv=1" data-channel-idx="8" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="alwan1" data-link="https://a18.kora-plus.app/frame.php?ch=alwan1&amp;p=12&amp;token=20a3b955-bc7d-4ce4-be62-27dfaae5091e&amp;kt=1782534701" data-channel-idx="9" style="background: rgb(52, 73, 94);">alwan1</button><button class="aplr-link" data-type="channel" data-name="max1" data-link="https://a15.kora-plus.app/frame.php?ch=max1&amp;p=12&amp;token=20a3b955-bc7d-4ce4-be62-27dfaae5091e&amp;kt=1782534721" data-channel-idx="10" style="background: rgb(52, 73, 94);">max1</button><button class="aplr-link" data-type="channel" data-name="eng" data-link="https://28.streemach.site/albaplayer/live1/?serv=2" data-channel-idx="11" style="background: rgb(52, 73, 94);">eng</button><button class="aplr-link" data-type="channel" data-name="sp" data-link="https://28.streemach.site/albaplayer/live2/?serv=1" data-channel-idx="12" style="background: rgb(52, 73, 94);">sp</button><button class="aplr-link" data-type="channel" data-name="fr" data-link="https://28.streemach.site/albaplayer/live3/?serv=1" data-channel-idx="13" style="background: rgb(52, 73, 94);">fr</button><button class="aplr-link" data-type="channel" data-name="2 بديل" data-link="https://player.twitch.tv/?channel=alimods12&amp;enableExtensions=true&amp;muted=false&amp;parent=twitch.tv&amp;player=popout&amp;quality=auto&amp;volume=0.5" data-channel-idx="14" style="background: rgb(52, 73, 94);">2 بديل</button><button class="aplr-link" data-type="channel" data-name="3 بديل" data-link="https://zz.depoooo.com/albaplayer/bein-1/?serv=1" data-channel-idx="15" style="background: rgb(52, 73, 94);">3 بديل</button><button class="aplr-link" data-type="channel" data-name="4" data-link="https://28.streemach.site/albaplayer/live4/?serv=1" data-channel-idx="16" style="background: rgb(52, 73, 94);">4</button><button class="aplr-link" data-type="channel" data-name="5" data-link="https://28.streemach.site/albaplayer/live5/?serv=1" data-channel-idx="17" style="background: rgb(52, 73, 94);">5</button><button class="aplr-link" data-type="channel" data-name="6" data-link="https://cu.freshfin.site/mercaz1_720/index.m3u8" data-channel-idx="18" style="background: rgb(52, 73, 94);">6</button><button class="aplr-link" data-type="channel" data-name="بث احتياطي" data-link="https://cu.freshfin.site/mercaz1_360/index.m3u8" data-channel-idx="19" style="background: rgb(52, 73, 94);">بث احتياطي</button><button class="aplr-link" data-type="channel" data-name="8" data-link="https://28.streemach.site/albaplayer/live1/?serv=11" data-channel-idx="20" style="background: rgb(52, 73, 94);">8</button><button class="aplr-link" data-type="channel" data-name="11" data-link="https://28.streemach.site/albaplayer/live1/?serv=12" data-channel-idx="21" style="background: rgb(52, 73, 94);">11</button><button class="aplr-link" data-type="channel" data-name="22" data-link="https://28.streemach.site/albaplayer/live1/?serv=13" data-channel-idx="22" style="background: rgb(52, 73, 94);">22</button><button class="aplr-link" data-type="channel" data-name="10" data-link="https://28.streemach.site/albaplayer/live1/?serv=14" data-channel-idx="23" style="background: rgb(52, 73, 94);">10</button><button class="aplr-link" data-type="channel" data-name="11" data-link="https://28.streemach.site/albaplayer/live1/?serv=15" data-channel-idx="24" style="background: rgb(52, 73, 94);">11</button><button class="aplr-link" data-type="channel" data-name="احتياطي" data-link="https://28.streemach.site/albaplayer/live1/?serv=16" data-channel-idx="25" style="background: rgb(52, 73, 94);">احتياطي</button><button class="aplr-link" data-type="channel" data-name="4" data-link="https://28.streemach.site/albaplayer/live1/?serv=17" data-channel-idx="26" style="background: rgb(52, 73, 94);">4</button><button class="aplr-link" data-type="channel" data-name="english" data-link="https://28.streemach.site/albaplayer/live1/?serv=18" data-channel-idx="27" style="background: rgb(52, 73, 94);">english</button><button class="aplr-link" data-type="channel" data-name="111" data-link="https://28.streemach.site/albaplayer/live1/?serv=19" data-channel-idx="28" style="background: rgb(52, 73, 94);">111</button><button class="aplr-link" data-type="channel" data-name="9" data-link="https://28.streemach.site/albaplayer/live1/?serv=20" data-channel-idx="29" style="background: rgb(52, 73, 94);">9</button><button class="aplr-link" data-type="channel" data-name="21" data-link="https://score808.mov/share/stream100.php?token=68747470733a2f2f687265662e6c692f3f68747470733a2f2f77342e73706f7274736f6e6c6c696e652e636c69636b2f6368616e6e656c732f68642f6864312e706870" data-channel-idx="30" style="background: rgb(52, 73, 94);">21</button><button class="aplr-link" data-type="channel" data-name="22" data-link="https://a18.kora-plus.app/frame.php?ch=m6&amp;p=12&amp;token=20a3b955-bc7d-4ce4-be62-27dfaae5091e&amp;kt=1782503335" data-channel-idx="31" style="background: rgb(52, 73, 94);">22</button><button class="aplr-link" data-type="channel" data-name="23" data-link="https://a17.kora-plus.app/frame.php?ch=itv1&amp;p=12&amp;token=20a3b955-bc7d-4ce4-be62-27dfaae5091e&amp;kt=1782503348" data-channel-idx="32" style="background: rgb(52, 73, 94);">23</button><button class="aplr-link" data-type="channel" data-name="24" data-link="https://a18.kora-plus.app/frame.php?ch=max22&amp;p=12&amp;token=20a3b955-bc7d-4ce4-be62-27dfaae5091e&amp;kt=1782503359" data-channel-idx="33" style="background: rgb(52, 73, 94);">24</button><button class="aplr-link" data-type="channel" data-name="25" data-link="https://a16.kora-plus.app/frame.php?ch=alwan2&amp;p=12&amp;token=20a3b955-bc7d-4ce4-be62-27dfaae5091e&amp;kt=1782503371" data-channel-idx="34" style="background: rgb(52, 73, 94);">25</button><button class="aplr-link" data-type="channel" data-name="26" data-link="https://a13.kora-plus.app/frame.php?ch=max2&amp;p=12&amp;token=20a3b955-bc7d-4ce4-be62-27dfaae5091e&amp;kt=1782503384" data-channel-idx="35" style="background: rgb(52, 73, 94);">26</button><button class="aplr-link" data-type="channel" data-name="27" data-link="https://score808.mov/share/stream100.php?token=68747470733a2f2f687265662e6c692f3f68747470733a2f2f77342e73706f7274736f6e6c6c696e652e636c69636b2f6368616e6e656c732f68642f6864372e706870" data-channel-idx="36" style="background: rgb(52, 73, 94);">27</button><button class="aplr-link" data-type="channel" data-name="28" data-link="https://score808.mov/share/stream100.php?token=68747470733a2f2f687265662e6c692f3f68747470733a2f2f77342e73706f7274736f6e6c6c696e652e636c69636b2f6368616e6e656c732f68642f6864362e706870" data-channel-idx="37" style="background: rgb(52, 73, 94);">28</button><button class="aplr-link" data-type="channel" data-name="29" data-link="https://score808.mov/share/stream100.php?token=68747470733a2f2f687265662e6c692f3f68747470733a2f2f77342e73706f7274736f6e6c6c696e652e636c69636b2f6368616e6e656c732f68642f6864342e706870" data-channel-idx="38" style="background: rgb(52, 73, 94);">29</button><button class="aplr-link" data-type="channel" data-name="30" data-link="https://score808.mov/share/stream100.php?token=68747470733a2f2f687265662e6c692f3f68747470733a2f2f77342e73706f7274736f6e6c6c696e652e636c69636b2f6368616e6e656c732f68642f6864332e706870" data-channel-idx="39" style="background: rgb(52, 73, 94);">30</button><button class="aplr-link" data-type="channel" data-name="31" data-link="https://score808.mov/share/stream100.php?token=68747470733a2f2f687265662e6c692f3f68747470733a2f2f77342e73706f7274736f6e6c6c696e652e636c69636b2f6368616e6e656c732f68642f6864322e706870" data-channel-idx="40" style="background: rgb(52, 73, 94);">31</button><button class="aplr-link" data-type="channel" data-name="32" data-link="https://mywebsite17.github.io/MY-TV-./" data-channel-idx="41" style="background: rgb(52, 73, 94);">32</button><button class="aplr-link" data-type="channel" data-name="33" data-link="https://mywebsite17.github.io/MY-TV-./" data-channel-idx="42" style="background: rgb(52, 73, 94);">33</button><button class="aplr-link" data-type="channel" data-name="38" data-link="https://dlhd.pk/watch/stream-966.php" data-channel-idx="43" style="background: rgb(52, 73, 94);">38</button><button class="aplr-link" data-type="channel" data-name="37" data-link="https://dlhd.pk/watch/stream-966.php" data-channel-idx="44" style="background: rgb(52, 73, 94);">37</button><button class="aplr-link" data-type="channel" data-name="39" data-link="https://dlhd.pk/stream/stream-967.php" data-channel-idx="45" style="background: rgb(52, 73, 94);">39</button><button class="aplr-link" data-type="channel" data-name="40" data-link="https://dlhd.pk/stream/stream-968.php" data-channel-idx="46" style="background: rgb(52, 73, 94);">40</button><button class="aplr-link" data-type="channel" data-name="41" data-link="https://dlhd.pk/stream/stream-969.php" data-channel-idx="47" style="background: rgb(52, 73, 94);">41</button><button class="aplr-link" data-type="channel" data-name="42" data-link="https://a1.koora24.sbs/embed/90" data-channel-idx="48" style="background: rgb(52, 73, 94);">42</button><button class="aplr-link" data-type="channel" data-name="43" data-link="https://a1.koora24.sbs/embed/91" data-channel-idx="49" style="background: rgb(52, 73, 94);">43</button><button class="aplr-link" data-type="channel" data-name="44" data-link="https://hd.muesra.sbs/albaplayer/oooes/" data-channel-idx="50" style="background: rgb(52, 73, 94);">44</button><button class="aplr-link" data-type="channel" data-name="45" data-link="https://player.syria-player.live/albaplayer/beinmax1/" data-channel-idx="51" style="background: rgb(52, 73, 94);">45</button><button class="aplr-link" data-type="channel" data-name="46" data-link="https://vip.worldkoora.com/albaplayer/vip1/" data-channel-idx="52" style="background: rgb(52, 73, 94);">46</button><button class="aplr-link" data-type="channel" data-name="47" data-link="https://vip.worldkoora.com/albaplayer/vip2/" data-channel-idx="53" style="background: rgb(52, 73, 94);">47</button><button class="aplr-link" data-type="channel" data-name="49" data-link="https://1.yalla3arab.com/albaplayer/bein-sports-hd-1/?serv=0" data-channel-idx="54" style="background: rgb(52, 73, 94);">49</button><button class="aplr-link" data-type="channel" data-name="50" data-link="https://1.yalla3arab.com/albaplayer/bein-sports-hd-2/?serv=0" data-channel-idx="55" style="background: rgb(52, 73, 94);">50</button><button class="aplr-link" data-type="channel" data-name="51" data-link="https://1.yalla3arab.com/albaplayer/bein-sports-hd-3/?serv=0" data-channel-idx="56" style="background: rgb(52, 73, 94);">51</button><button class="aplr-link" data-type="channel" data-name="52" data-link="https://1.yalla3arab.com/albaplayer/bein-sports-hd-4/?serv=0" data-channel-idx="57" style="background: rgb(52, 73, 94);">52</button><button class="aplr-link" data-type="channel" data-name="53" data-link="https://1.yalla3arab.com/albaplayer/bein-sports-hd-5/?serv=0" data-channel-idx="58" style="background: rgb(52, 73, 94);">53</button><button class="aplr-link" data-type="channel" data-name="54" data-link="https://1.yalla3arab.com/albaplayer/bein-sports-hd-6/?serv=0" data-channel-idx="59" style="background: rgb(52, 73, 94);">54</button><button class="aplr-link" data-type="channel" data-name="55" data-link="https://p6.panda-hd.online/albaplayer/extra-1/" data-channel-idx="60" style="background: rgb(52, 73, 94);">55</button><button class="aplr-link" data-type="channel" data-name="56" data-link="https://p6.panda-hd.online/albaplayer/extra-2/" data-channel-idx="61" style="background: rgb(52, 73, 94);">56</button><button class="aplr-link" data-type="channel" data-name="57" data-link="https://p6.panda-hd.online/albaplayer/extra-3/" data-channel-idx="62" style="background: rgb(52, 73, 94);">57</button><button class="aplr-link" data-type="channel" data-name="58" data-link="https://p6.panda-hd.online/albaplayer/extra-4/" data-channel-idx="63" style="background: rgb(52, 73, 94);">58</button><button class="aplr-link" data-type="channel" data-name="62" data-link="https://m.v-sami.online/splplayer/bmax1/" data-channel-idx="64" style="background: rgb(52, 73, 94);">62</button><button class="aplr-link" data-type="channel" data-name="63" data-link="https://m.v-sami.online/splplayer/bmax2/" data-channel-idx="65" style="background: rgb(52, 73, 94);">63</button><button class="aplr-link" data-type="channel" data-name="64" data-link="https://k7.sansa-kora.net/albaplayer/b1/" data-channel-idx="66" style="background: rgb(52, 73, 94);">64</button><button class="aplr-link" data-type="channel" data-name="65" data-link="https://k7.sansa-kora.net/albaplayer/b2/" data-channel-idx="67" style="background: rgb(52, 73, 94);">65</button><button class="aplr-link" data-type="channel" data-name="66" data-link="https://mywebsite17.github.io/LIVEKOR/" data-channel-idx="68" style="background: rgb(52, 73, 94);">66</button><button class="aplr-link" data-type="channel" data-name="4627875" data-link="https://912acsss8af382.shootny.com/playerv5.php?match=4627875&amp;key=9f39972b67d6ce22189507d008acwc26" data-channel-idx="69" style="background: rgb(52, 73, 94);">4627875</button><button class="aplr-link" data-type="channel" data-name="4627903" data-link="https://912acsss8af382.shootny.com/playerv5.php?match=4627903&amp;key=9f39972b67d6ce22189507d008acwc26" data-channel-idx="70" style="background: rgb(52, 73, 94);">4627903</button><button class="aplr-link" data-type="channel" data-name="69" data-link="https://hd.muesra.sbs/albaplayer/oooe/?serv=0" data-channel-idx="71" style="background: rgb(52, 73, 94);">69</button><button class="aplr-link" data-type="channel" data-name="70" data-link="https://hd.muesra.sbs/albaplayer/oooe/?serv=0" data-channel-idx="72" style="background: rgb(52, 73, 94);">70</button><button class="aplr-link" data-type="channel" data-name="71" data-link="https://69cup.s3.us-east-2.amazonaws.com/max3/max3_240p/index.m3u8" data-channel-idx="73" style="background: rgb(52, 73, 94);">71</button><button class="aplr-link" data-type="channel" data-name="72" data-link="https://dlhd.pk/watch/stream-966.php" data-channel-idx="74" style="background: rgb(52, 73, 94);">72</button><button class="aplr-link" data-type="channel" data-name="73" data-link="https://dlhd.pk/watch/stream-967.php" data-channel-idx="75" style="background: rgb(52, 73, 94);">73</button><button class="aplr-link" data-type="channel" data-name="74" data-link="https://dlhd.pk/watch/stream-968.php" data-channel-idx="76" style="background: rgb(52, 73, 94);">74</button><button class="aplr-link" data-type="channel" data-name="75" data-link="https://dlhd.pk/watch/stream-969.php" data-channel-idx="77" style="background: rgb(52, 73, 94);">75</button><button class="aplr-link" data-type="channel" data-name="76" data-link="https://fomis.phantemlis.top/premium969/tracks-v1a1/mono.m3u8?md5=AIbdj4AjCgCBYTUoHaxCKg&amp;expires=1782611617" data-channel-idx="78" style="background: rgb(52, 73, 94);">76</button><button class="aplr-link" data-type="channel" data-name="77" data-link="https://mywebsite17.github.io/LIVEKOR/" data-channel-idx="79" style="background: rgb(52, 73, 94);">77</button><button class="aplr-link" data-type="channel" data-name="77" data-link="https://1.1sports.live/albaplayer/b1/" data-channel-idx="80" style="background: rgb(52, 73, 94);">77</button><button class="aplr-link" data-type="channel" data-name="78" data-link="https://ex.roooom.online/?alba-player=home2" data-channel-idx="81" style="background: rgb(52, 73, 94);">78</button><button class="aplr-link" data-type="channel" data-name="79" data-link="https://26.1yallashoot.online/albaplayer/live3/" data-channel-idx="82" style="background: rgb(52, 73, 94);">79</button><button class="aplr-link" data-type="channel" data-name="80" data-link="https://k.a-koraa.com/?p=76" data-channel-idx="83" style="background: rgb(52, 73, 94);">80</button><button class="aplr-link" data-type="channel" data-name="81" data-link="https://k.a-koraa.com/albaplayer/p-2/" data-channel-idx="84" style="background: rgb(52, 73, 94);">81</button><button class="aplr-link" data-type="channel" data-name="82" data-link="https://k.a-koraa.com/albaplayer/p-1/" data-channel-idx="85" style="background: rgb(52, 73, 94);">82</button><button class="aplr-link" data-type="channel" data-name="83" data-link="https://kick.com/watchkick20" data-channel-idx="86" style="background: rgb(52, 73, 94);">83</button><button class="aplr-link" data-type="channel" data-name="84" data-link="https://1.terikora.net/splayer/Live1.php" data-channel-idx="87" style="background: rgb(52, 73, 94);">84</button><button class="aplr-link" data-type="channel" data-name="85" data-link="https://1.terikora.net/splayer/Live2.php" data-channel-idx="88" style="background: rgb(52, 73, 94);">85</button><button class="aplr-link" data-type="channel" data-name="86" data-link="https://1.terikora.net/splayer/Live3.php" data-channel-idx="89" style="background: rgb(52, 73, 94);">86</button><button class="aplr-link" data-type="channel" data-name="87" data-link="https://1.terikora.net/splayer/Live4.php" data-channel-idx="90" style="background: rgb(52, 73, 94);">87</button><button class="aplr-link" data-type="channel" data-name="88" data-link="https://1.terikora.net/splayer/Live5.php" data-channel-idx="91" style="background: rgb(52, 73, 94);">88</button><button class="aplr-link" data-type="channel" data-name="89" data-link="https://1.terikora.net/splayer/Live6.php" data-channel-idx="92" style="background: rgb(52, 73, 94);">89</button><button class="aplr-link" data-type="channel" data-name="90" data-link="https://majed-koora.co/stream.php?channel=mamam991&amp;file=stream.m3u8" data-channel-idx="93" style="background: rgb(52, 73, 94);">90</button><button class="aplr-link" data-type="channel" data-name="91" data-link="https://majed-koora.co/stream.php?channel=mamam991&amp;file=stream.m3u8" data-channel-idx="94" style="background: rgb(52, 73, 94);">91</button><button class="aplr-link" data-type="channel" data-name="91" data-link="https://www.rwayaat.com/" data-channel-idx="95" style="background: rgb(52, 73, 94);">91</button><button class="aplr-link" data-type="channel" data-name="92" data-link="https://livefootball.cc/" data-channel-idx="96" style="background: rgb(52, 73, 94);">92</button><button class="aplr-link" data-type="channel" data-name="92" data-link="https://a1.koora24.sbs/embed/102" data-channel-idx="97" style="background: rgb(52, 73, 94);">92</button><button class="aplr-link" data-type="channel" data-name="93" data-link="https://majed-koora.co/stream.php?channel=fhfhfh9393&amp;file=stream.m3u8" data-channel-idx="98" style="background: rgb(52, 73, 94);">93</button><button class="aplr-link" data-type="channel" data-name="94" data-link="https://majed-koora.co/stream.php?channel=fhfhfh9393&amp;file=stream.m3u8" data-channel-idx="99" style="background: rgb(52, 73, 94);">94</button><button class="aplr-link" data-type="channel" data-name="95" data-link="https://player.twitch.tv/?channel=fhfhfh9393&amp;parent=majed-koora.co&amp;muted=false" data-channel-idx="100" style="background: rgb(52, 73, 94);">95</button><button class="aplr-link" data-type="channel" data-name="96" data-link="https://acceptable.a-ads.com/2436824/?size=Adaptive" data-channel-idx="101" style="background: rgb(52, 73, 94);">96</button><button class="aplr-link" data-type="channel" data-name="97" data-link="https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8" data-channel-idx="102" style="background: rgb(52, 73, 94);">97</button><button class="aplr-link" data-type="channel" data-name="98" data-link="https://new.poiy.online/albaplayer/max1/" data-channel-idx="103" style="background: rgb(52, 73, 94);">98</button><button class="aplr-link" data-type="channel" data-name="99" data-link="https://new.poiy.online/albaplayer/max2/" data-channel-idx="104" style="background: rgb(52, 73, 94);">99</button><button class="aplr-link" data-type="channel" data-name="100" data-link="https://new.poiy.online/albaplayer/max3/" data-channel-idx="105" style="background: rgb(52, 73, 94);">100</button><button class="aplr-link" data-type="channel" data-name="101" data-link="https://new.poiy.online/albaplayer/max4/" data-channel-idx="106" style="background: rgb(52, 73, 94);">101</button><button class="aplr-link" data-type="channel" data-name="102" data-link="https://zz.depoooo.com/albaplayer/bein-1/?serv=1" data-channel-idx="107" style="background: rgb(52, 73, 94);">102</button><button class="aplr-link" data-type="channel" data-name="https://www.rwayaat.com/" data-link="https://www.rwayaat.com/" data-channel-idx="108" style="background: rgb(52, 73, 94);">https://www.rwayaat.com/</button><button class="aplr-link" data-type="channel" data-name="104" data-link="https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8" data-channel-idx="109" style="background: rgb(52, 73, 94);">104</button><button class="aplr-link" data-type="channel" data-name="105" data-link="https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8" data-channel-idx="110" style="background: rgb(52, 73, 94);">105</button><button class="aplr-link" data-type="channel" data-name="1" data-link="https://p.alooytv8.xyz/world-cup-2026?ch=1" data-channel-idx="111" style="background: rgb(52, 73, 94);">1</button><button class="aplr-link" data-type="channel" data-name="القناة الأساسية (تجربة)" data-link="https://href.li/?https://17.livekoora.blog/albaplayer/live1/" data-channel-idx="112" style="background: rgb(52, 73, 94);">القناة الأساسية (تجربة)</button><button class="aplr-link" data-type="channel" data-name="https://majed-koora.com/" data-link="https://majed-koora.com/" data-channel-idx="113" style="background: rgb(52, 73, 94);">https://majed-koora.com/</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://worldchampion.fun/welcome-4/" data-channel-idx="114" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="قناة 2" data-link="https://mo.yalla-shhot.xyz/albaplayer/sport-1-2/" data-channel-idx="115" style="background: rgb(52, 73, 94);">قناة 2</button><button class="aplr-link" data-type="channel" data-name="قناة 3" data-link="https://25.yallashoot11.fun/albaplayer/live1/" data-channel-idx="116" style="background: rgb(52, 73, 94);">قناة 3</button><button class="aplr-link" data-type="channel" data-name="قناة 4" data-link="https://go.pkju.online/albaplayer/max1/" data-channel-idx="117" style="background: rgb(52, 73, 94);">قناة 4</button><button class="aplr-link" data-type="channel" data-name="قناة 5" data-link="https://k2.kore10.blog/albaplayer/p-1/" data-channel-idx="118" style="background: rgb(52, 73, 94);">قناة 5</button><button class="aplr-link" data-type="channel" data-name="قناة 6" data-link="https://live.bb6.dpdns.org/albaplayer/ch1/?serv=0" data-channel-idx="119" style="background: rgb(52, 73, 94);">قناة 6</button><button class="aplr-link" data-type="channel" data-name="قناة 7" data-link="https://y2.yallah.blog/albaplayer/b-1/" data-channel-idx="120" style="background: rgb(52, 73, 94);">قناة 7</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://fabor-tv.to/" data-channel-idx="121" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="folder" data-name="مواقع كورة" data-id="folder_1783432218539a5v6s" style="background: rgb(211, 84, 0);">📁 مواقع كورة</button><button class="aplr-link" data-type="folder" data-name="مواقع افلام" data-id="folder_1783466359701" style="background: rgb(211, 84, 0);">📁 مواقع افلام</button><button class="aplr-link" data-type="folder" data-name="القنوات الاساسية" data-id="folder_1783432218525amthh" style="background: rgb(211, 84, 0);">📁 القنوات الاساسية</button><button class="aplr-link" data-type="folder" data-name="المقاطع المحددة / usb_ipaudio" data-id="folder_1783432218539dwcke" style="background: rgb(211, 84, 0);">📁 المقاطع المحددة / usb_ipaudio</button><button class="aplr-link" data-type="folder" data-name="BeinN max world cup" data-id="folder_1783432218539vak91" style="background: rgb(211, 84, 0);">📁 BeinN max world cup</button><button class="aplr-link" data-type="folder" data-name="BN max world cup 2" data-id="folder_1783432218539k6s1x" style="background: rgb(211, 84, 0);">📁 BN max world cup 2</button><button class="aplr-link" data-type="folder" data-name="BEIN 1" data-id="folder_178343221853996a53" style="background: rgb(211, 84, 0);">📁 BEIN 1</button><button class="aplr-link" data-type="folder" data-name="BN Max" data-id="folder_1783432218539d8wzt" style="background: rgb(211, 84, 0);">📁 BN Max</button><button class="aplr-link" data-type="folder" data-name="Bn  1" data-id="folder_1783432218539kj5jd" style="background: rgb(211, 84, 0);">📁 Bn  1</button><button class="aplr-link" data-type="folder" data-name="IFRAMES" data-id="folder_1783432218539prtz9" style="background: rgb(211, 84, 0);">📁 IFRAMES</button><button class="aplr-link" data-type="folder" data-name="TNT SKY" data-id="folder_1783432218539uokp4" style="background: rgb(211, 84, 0);">📁 TNT SKY</button><button class="aplr-link" data-type="folder" data-name="LIVE" data-id="folder_1783432218539a5v6s" style="background: rgb(211, 84, 0);">📁 LIVE</button><button class="aplr-link" data-type="folder" data-name="RADIO" data-id="folder_17834322185398btju" style="background: rgb(211, 84, 0);">📁 RADIO</button><button class="aplr-link" data-type="folder" data-name="Salsaa" data-id="folder_178343221853927q2b" style="background: rgb(211, 84, 0);">📁 Salsaa</button><button class="aplr-link" data-type="folder" data-name="TEST" data-id="folder_1783432218540uh295" style="background: rgb(211, 84, 0);">📁 TEST</button><button class="aplr-link" data-type="folder" data-name="bn 2" data-id="folder_1783432218540q6lzo" style="background: rgb(211, 84, 0);">📁 bn 2</button><button class="aplr-link" data-type="folder" data-name="bn 5" data-id="folder_1783432218540pl5vf" style="background: rgb(211, 84, 0);">📁 bn 5</button><button class="aplr-link" data-type="folder" data-name="bn 6" data-id="folder_17834322185407sdq3" style="background: rgb(211, 84, 0);">📁 bn 6</button><button class="aplr-link" data-type="folder" data-name="bn3" data-id="folder_17834322185408y1aq" style="background: rgb(211, 84, 0);">📁 bn3</button><button class="aplr-link" data-type="folder" data-name="bn4" data-id="folder_17834322185408ilfz" style="background: rgb(211, 84, 0);">📁 bn4</button><button class="aplr-link" data-type="folder" data-name="iptv" data-id="folder_1783432218540u9g56" style="background: rgb(211, 84, 0);">📁 iptv</button><button class="aplr-link" data-type="folder" data-name="live kora" data-id="folder_1783432218540c4pp7" style="background: rgb(211, 84, 0);">📁 live kora</button><button class="aplr-link" data-type="folder" data-name="on sport" data-id="folder_1783432218540y9vq7" style="background: rgb(211, 84, 0);">📁 on sport</button><button class="aplr-link" data-type="folder" data-name="sky 7" data-id="folder_1783432218540cbl3w" style="background: rgb(211, 84, 0);">📁 sky 7</button><button class="aplr-link" data-type="folder" data-name="wwe" data-id="folder_1783432218540f444j" style="background: rgb(211, 84, 0);">📁 wwe</button><button class="aplr-link" data-type="folder" data-name="المحفوظات" data-id="folder_1783432218540jhsts" style="background: rgb(211, 84, 0);">📁 المحفوظات</button><button class="aplr-link" data-type="folder" data-name="سوريا" data-id="folder_17834322185403wqdu" style="background: rgb(211, 84, 0);">📁 سوريا</button><button class="aplr-link" data-type="folder" data-name="قنوات عامة" data-id="folder_1783432218543hrh6c" style="background: rgb(211, 84, 0);">📁 قنوات عامة</button><button class="aplr-link" data-type="folder" data-name="لينكات" data-id="folder_1783432218543pmmnx" style="background: rgb(211, 84, 0);">📁 لينكات</button><button class="aplr-link" data-type="folder" data-name="يدوياً" data-id="folder_17834322185438wjg7" style="background: rgb(211, 84, 0);">📁 يدوياً</button><button class="aplr-link" data-type="folder" data-name="قنوات رياضية" data-id="folder_17834322185432s7d1" style="background: rgb(211, 84, 0);">📁 قنوات رياضية</button><button class="aplr-link" data-type="folder" data-name="usb_ipaudio" data-id="folder_1783432218543fqs04" style="background: rgb(211, 84, 0);">📁 usb_ipaudio</button><button class="aplr-link" data-type="folder" data-name="مواقع افلام" data-id="folder_1783466359701" style="background: rgb(211, 84, 0);">📁 مواقع افلام</button><button class="aplr-link" data-type="folder" data-name="مواقع WWE" data-id="folder_1783466368249" style="background: rgb(211, 84, 0);">📁 مواقع WWE</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://21.1yalla-shoot.space/albaplayer/live1/" data-channel-idx="122" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="قناة 2" data-link="https://21.1yalla-shoot.space/albaplayer/live2/" data-channel-idx="123" style="background: rgb(52, 73, 94);">قناة 2</button><button class="aplr-link" data-type="channel" data-name="قناة 3" data-link="https://21.1yalla-shoot.space/albaplayer/live2/" data-channel-idx="124" style="background: rgb(52, 73, 94);">قناة 3</button><button class="aplr-link" data-type="channel" data-name="قناة 4" data-link="https://21.1yalla-shoot.space/albaplayer/live3/" data-channel-idx="125" style="background: rgb(52, 73, 94);">قناة 4</button><button class="aplr-link" data-type="channel" data-name="قناة 5" data-link="https://21.1yalla-shoot.space/albaplayer/live4/" data-channel-idx="126" style="background: rgb(52, 73, 94);">قناة 5</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://vileembeds.pages.dev/embed/dazn1-usa" data-channel-idx="127" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="قناة 2" data-link="https://vileembeds.pages.dev/embed/dazn2-usa" data-channel-idx="128" style="background: rgb(52, 73, 94);">قناة 2</button><button class="aplr-link" data-type="channel" data-name="قناة 3" data-link="https://vileembeds.pages.dev/embed/dazn3-usa" data-channel-idx="129" style="background: rgb(52, 73, 94);">قناة 3</button><button class="aplr-link" data-type="channel" data-name="قناة 4" data-link="https://vileembeds.pages.dev/embed/dazn4-usa" data-channel-idx="130" style="background: rgb(52, 73, 94);">قناة 4</button><button class="aplr-link" data-type="folder" data-name="4k" data-id="folder_1783628144383" style="background: rgb(211, 84, 0);">📁 4k</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://b.depoooo.com/albaplayer/bein-1/?serv=1" data-channel-idx="131" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://b.depoooo.com/albaplayer/bein-2/?serv=1" data-channel-idx="132" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="قناة 2" data-link="https://b.depoooo.com/albaplayer/bein-3/?serv=1" data-channel-idx="133" style="background: rgb(52, 73, 94);">قناة 2</button><button class="aplr-link" data-type="channel" data-name="قناة 3" data-link="https://b.depoooo.com/albaplayer/bein-4/?serv=1" data-channel-idx="134" style="background: rgb(52, 73, 94);">قناة 3</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://25.yallashoot11.fun/albaplayer/live1/" data-channel-idx="135" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="قناة 4" data-link="https://mo.yalla-shhot.xyz/albaplayer/sport-1-2/" data-channel-idx="136" style="background: rgb(52, 73, 94);">قناة 4</button><button class="aplr-link" data-type="channel" data-name="قناة 7" data-link="https://p2.paanda-hd.com/splplayer/max-1/" data-channel-idx="137" style="background: rgb(52, 73, 94);">قناة 7</button><button class="aplr-link" data-type="channel" data-name="قناة 10" data-link="https://go.pkju.online/albaplayer/max1/" data-channel-idx="138" style="background: rgb(52, 73, 94);">قناة 10</button><button class="aplr-link" data-type="channel" data-name="قناة 13" data-link="https://k2.kore10.blog/albaplayer/p-1/" data-channel-idx="139" style="background: rgb(52, 73, 94);">قناة 13</button><button class="aplr-link" data-type="channel" data-name="قناة 16" data-link="https://live.bb6.dpdns.org/albaplayer/ch1/?serv=0" data-channel-idx="140" style="background: rgb(52, 73, 94);">قناة 16</button><button class="aplr-link" data-type="channel" data-name="قناة 19" data-link="https://y2.yallah.blog/albaplayer/b-1/" data-channel-idx="141" style="background: rgb(52, 73, 94);">قناة 19</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://worldchampion.fun/welcome-4/" data-channel-idx="142" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="قناة 2" data-link="https://mo.yalla-shhot.xyz/albaplayer/sport-1-2/" data-channel-idx="143" style="background: rgb(52, 73, 94);">قناة 2</button><button class="aplr-link" data-type="channel" data-name="قناة 3" data-link="https://25.yallashoot11.fun/albaplayer/live1/" data-channel-idx="144" style="background: rgb(52, 73, 94);">قناة 3</button><button class="aplr-link" data-type="channel" data-name="قناة 4" data-link="https://go.pkju.online/albaplayer/max1/" data-channel-idx="145" style="background: rgb(52, 73, 94);">قناة 4</button><button class="aplr-link" data-type="channel" data-name="قناة 5" data-link="https://live.bb6.dpdns.org/albaplayer/ch1/?serv=0" data-channel-idx="146" style="background: rgb(52, 73, 94);">قناة 5</button><button class="aplr-link" data-type="channel" data-name="قناة 6" data-link="https://s3.ben-salah.online/albaplayer/b2/" data-channel-idx="147" style="background: rgb(52, 73, 94);">قناة 6</button><button class="aplr-link" data-type="channel" data-name="قناة 1" data-link="https://player.syria-player.live/albaplayer/bein1/" data-channel-idx="148" style="background: rgb(52, 73, 94);">قناة 1</button><button class="aplr-link" data-type="channel" data-name="قناة 2" data-link="https://player.syria-player.live/albaplayer/bein2/" data-channel-idx="149" style="background: rgb(52, 73, 94);">قناة 2</button><button class="aplr-link" data-type="channel" data-name="قناة 3" data-link="https://player.syria-player.live/albaplayer/bein3/" data-channel-idx="150" style="background: rgb(52, 73, 94);">قناة 3</button><button class="aplr-link" data-type="channel" data-name="قناة 4" data-link="https://player.syria-player.live/albaplayer/bein4/" data-channel-idx="151" style="background: rgb(52, 73, 94);">قناة 4</button></div>
@@ -2384,158 +2387,51 @@ window.fetchCurrentIframe = async function() {
         try { response = await fetch('https://corsproxy.io/?' + encodeURIComponent(url)); if (!response.ok) throw new Error("Fallback"); }
         catch (e1) {
             try { response = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url)); if (!response.ok) throw new Error("Fallback"); }
-            catch (e2) { response = await fetch('https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url)); if (!response.ok) throw new Error("All proxies failed"); }
+            catch (e2) { response = await fetch('https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url)); if(!response.ok) throw new Error("All proxies failed"); }
         }
 
         let html = await response.text();
         let parser = new DOMParser();
         let doc = parser.parseFromString(html, 'text/html');
 
-        // الإطارات الصريحة
-        doc.querySelectorAll('iframe').forEach(ifr => {
-            addLink(ifr.getAttribute('src') || ifr.getAttribute('data-src'), "إطار");
-        });
-
-        // الزراير المخفية
-        doc.querySelectorAll('[data-link], [data-url], [data-src], [data-server]').forEach(el => {
-            addLink(el.getAttribute('data-link') || el.getAttribute('data-url') || el.getAttribute('data-src') || el.getAttribute('data-server'), "سيرفر");
-        });
-
-        // فك تشفير الـ Base64
-        let b64Matches = html.match(/(aHR0c[a-zA-Z0-9+/=]+)/g) || [];
-        b64Matches.forEach(b64 => {
-            try { let decoded = atob(b64); if(decoded.startsWith('http')) addLink(decoded, "مشفر"); } catch(e) {}
-        });
-
-        // استخراج يدوي للروابط
-        let rawUrls = html.match(/(https?:\/\/[^\s"'<>()\\]+)/gi) || [];
-        rawUrls.forEach(u => {
-            if(u.includes('player') || u.includes('embed') || u.includes('live')) {
-                addLink(u, "رابط إضافي");
+        function addExtractedLink(src) {
+            if (src && src.trim() !== '' && src !== 'about:blank' && !src.startsWith('javascript:')) {
+                src = src.replace(/\\/g, ''); 
+                if (src.startsWith('//')) src = 'https:' + src;
+                else if (src.startsWith('/')) { let u = new URL(url); src = u.origin + src; }
+                
+                if (!uniqueLinks.has(src)) {
+                    uniqueLinks.add(src);
+                    extracted.push({ name: "إطار " + extracted.length, link: src });
+                }
             }
-        });
+        }
+
+        // 1. الإطارات الصريحة
+        let iframes = doc.querySelectorAll('iframe');
+        iframes.forEach((ifr) => addExtractedLink(ifr.getAttribute('src')));
+
+        // 2. الروابط المخفية في السكريبتات
+        let iframeRegex = /<iframe[^>]+src=\\?["']([^"'>\\]+)\\?["']/gi;
+        let match;
+        while ((match = iframeRegex.exec(html)) !== null) {
+            addExtractedLink(match[1]);
+        }
+
+        // 3. فحص إضافي عن أي رابط بينتهي بـ m3u8 أو php جوه الكود
+        let linkRegex = /(https?:\/\/[^\s"'<>]+?(?:m3u8|php|embed)[^\s"'<>]*)/gi;
+        while ((match = linkRegex.exec(html)) !== null) {
+            addExtractedLink(match[1]);
+        }
 
     } catch(e) {
         console.error("Deep Scan Failed:", e);
-        alert("⚠️ الموقع محمي بقوة ضد الفحص.\nسيتم عرض ما تم استخراجه فقط.");
+        alert("⚠️ حماية الموقع قوية جداً.\n\nسيتم عرض ما تم استخراجه فقط.");
     } finally {
         window.showDeepScanModal(extracted);
         if(btn) btn.innerText = origText;
     }
 };
-
-// 2. دالة الواجهة (شاملة زرار نسخ الكل)
-window.showDeepScanModal = function(links) {
-    let existing = document.getElementById("deep-scan-modal");
-    if(existing) existing.remove();
-
-    let modal = document.createElement("div");
-    modal.id = "deep-scan-modal";
-    modal.style.cssText = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:100000; display:flex; justify-content:center; align-items:center; backdrop-filter:blur(5px); font-family:Arial, sans-serif; direction:rtl;";
-
-    let content = document.createElement("div");
-    content.style.cssText = "background:#1c232f; padding:20px; border-radius:15px; border:2px solid #f1c40f; width:90%; max-width:650px; max-height:85vh; display:flex; flex-direction:column; box-shadow:0 0 25px rgba(0,0,0,0.8);";
-
-    let header = document.createElement("h3");
-    header.style.cssText = "color:#f1c40f; text-align:center; margin-top:0; margin-bottom:20px; font-size:20px;";
-    header.innerHTML = "الإطارات المستخرجة (Deep Scan) 🔗";
-    content.appendChild(header);
-
-    let listContainer = document.createElement("div");
-    listContainer.style.cssText = "overflow-y:auto; padding-left:5px; margin-bottom:20px; display:flex; flex-direction:column; gap:12px;";
-
-    links.forEach((item) => {
-        let row = document.createElement("div");
-        row.style.cssText = "display:flex; justify-content:space-between; align-items:center; background:#2a323d; padding:12px 15px; border-radius:8px; gap:15px; border:1px solid #3d4859;";
-
-        let label = document.createElement("span");
-        label.style.cssText = "color:#f1c40f; font-weight:bold; white-space:nowrap; min-width:70px; text-align:right; font-size:15px;";
-        label.innerText = item.name + ":";
-
-        let urlText = document.createElement("input");
-        urlText.type = "text";
-        urlText.value = item.link;
-        urlText.readOnly = true;
-        urlText.style.cssText = "flex:1; background:transparent; border:none; color:#fff; text-align:left; direction:ltr; outline:none; font-size:14px; text-overflow:ellipsis;";
-
-        let actions = document.createElement("div");
-        actions.style.cssText = "display:flex; gap:8px;";
-
-        let btnOpen = document.createElement("button");
-        btnOpen.innerHTML = "↗️ فتح";
-        btnOpen.style.cssText = "background:transparent; border:1px solid #3498db; color:#3498db; padding:6px 12px; border-radius:5px; cursor:pointer; font-weight:bold; transition:all 0.3s;";
-        btnOpen.onmouseover = () => { btnOpen.style.background = "#3498db"; btnOpen.style.color = "#fff"; };
-        btnOpen.onmouseout = () => { btnOpen.style.background = "transparent"; btnOpen.style.color = "#3498db"; };
-        btnOpen.onclick = () => window.open(item.link, '_blank');
-
-        let btnCopy = document.createElement("button");
-        btnCopy.innerHTML = "📋 نسخ";
-        btnCopy.style.cssText = "background:transparent; border:1px solid #2ecc71; color:#2ecc71; padding:6px 12px; border-radius:5px; cursor:pointer; font-weight:bold; transition:all 0.3s;";
-        btnCopy.onmouseover = () => { btnCopy.style.background = "#2ecc71"; btnCopy.style.color = "#fff"; };
-        btnCopy.onmouseout = () => { btnCopy.style.background = "transparent"; btnCopy.style.color = "#2ecc71"; };
-        btnCopy.onclick = () => {
-            navigator.clipboard.writeText(item.link).then(() => {
-                let oldText = btnCopy.innerHTML;
-                btnCopy.innerHTML = "✅ تم";
-                btnCopy.style.background = "#2ecc71";
-                btnCopy.style.color = "#fff";
-                setTimeout(() => {
-                    btnCopy.innerHTML = oldText;
-                    btnCopy.style.background = "transparent";
-                    btnCopy.style.color = "#2ecc71";
-                }, 1500);
-            });
-        };
-
-        actions.appendChild(btnOpen);
-        actions.appendChild(btnCopy);
-        row.appendChild(label);
-        row.appendChild(urlText);
-        row.appendChild(actions);
-        listContainer.appendChild(row);
-    });
-
-    content.appendChild(listContainer);
-
-    // حاوية الزراير السفلية
-    let footer = document.createElement("div");
-    footer.style.cssText = "display:flex; justify-content:center; gap:15px; margin-top:10px;";
-
-    // 📋 زرار نسخ الكل
-    let copyAllBtn = document.createElement("button");
-    copyAllBtn.innerHTML = "📋 نسخ الكل";
-    copyAllBtn.style.cssText = "background:#9b59b6; color:white; border:none; padding:10px 30px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:16px; transition:0.3s;";
-    copyAllBtn.onmouseover = () => copyAllBtn.style.background = "#8e44ad";
-    copyAllBtn.onmouseout = () => copyAllBtn.style.background = "#9b59b6";
-    copyAllBtn.onclick = () => {
-        // بيجمع كل الروابط في سطر تحت سطر
-        let allLinksText = links.map(l => l.link).join('\n');
-        navigator.clipboard.writeText(allLinksText).then(() => {
-            copyAllBtn.innerHTML = "✅ تم نسخ الكل";
-            copyAllBtn.style.background = "#27ae60";
-            setTimeout(() => {
-                copyAllBtn.innerHTML = "📋 نسخ الكل";
-                copyAllBtn.style.background = "#9b59b6";
-            }, 2000);
-        }).catch(() => alert("حصلت مشكلة في النسخ، اتاكد من صلاحيات المتصفح."));
-    };
-
-    // ✖ زرار الإغلاق
-    let closeBtn = document.createElement("button");
-    closeBtn.innerHTML = "✖ إغلاق";
-    closeBtn.style.cssText = "background:#e74c3c; color:white; border:none; padding:10px 30px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:16px; transition:0.3s;";
-    closeBtn.onmouseover = () => closeBtn.style.background = "#c0392b";
-    closeBtn.onmouseout = () => closeBtn.style.background = "#e74c3c";
-    closeBtn.onclick = () => modal.remove();
-
-    footer.appendChild(copyAllBtn);
-    footer.appendChild(closeBtn);
-    
-    content.appendChild(footer);
-    modal.appendChild(content);
-    document.body.appendChild(modal);
-};
-    </script>
-
-
-</body></html>
+</script>
+</body>
+</html>
