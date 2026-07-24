@@ -334,9 +334,25 @@ window.firebaseConfig = {
     <meta name="theme-color" content="#7e80b4">
     <link rel="apple-touch-icon" href="./icon-192.png?v=v1784680489421">
     <script>
-      if ('serviceWorker' in navigator) {
+      if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('./sw.js?v=v1784680489421')
+            .then(reg => console.log('SW Registered'))
+            .catch(err => console.log('SW Failed', err));
+        });
+      }
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="manifest" href="./manifest.json?v=v1784862399012">
+    <meta name="theme-color" content="#c072c0">
+    <link rel="apple-touch-icon" href="./icon-192.png?v=v1784862399012">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js?v=v1784862399012')
             .then(reg => console.log('SW Registered'))
             .catch(err => console.log('SW Failed', err));
         });
@@ -513,8 +529,15 @@ window.firebaseConfig = {
                 
                 <button class="aplr-link" onclick="window.closePlayerScreen(); window.closeMultiManageModal();" style="background: #e74c3c;">✖ إغلاق الشاشة</button><button class="aplr-link" onclick="window.toggleMobileRotation(); window.closeMultiManageModal();" style="background: #27ae60;">📱 تدوير</button><button class="btn btn-outline" onclick="window.openExternal(); window.closeMultiManageModal();">↗️ فتح خارجي</button>
                 
-                <!-- الزرار الذهبي لسحب الاطارات - تم تغيير الدالة لتتوافق مع الكود الجديد -->
+                <!-- الزرار الذهبي لسحب الاطارات -->
                 <button class="btn" style="background: rgb(0, 136, 204); color: white; border: medium; padding: 6px 15px; border-radius: 50px; font-weight: bold; margin: 0px;" onclick="window.fetchCurrentIframe()">🔗 جلب كـل الـ Iframes</button>
+
+                <!-- أزرار البوكمارك (أدوات المتصفح) -->
+                <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top: 15px; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 8px; border: 1px dashed #f1c40f; align-items: center; justify-content: center;">
+                    <span style="width: 100%; text-align: center; color: #f1c40f; font-size: 14px; font-weight: bold; margin-bottom: 5px;">🔥 أدوات خارجية (اسحبها لشريط الإشارات في متصفحك)</span>
+                    <a href="javascript:(function(){var links=[];var regex=/(https?:\/\/[^\s&quot;&#39;\x3c\x3e]+?(?:m3u8|php|embed|html|play|stream|live)[^\s&quot;&#39;\x3c\x3e]*)/gi;var match;while((match=regex.exec(document.documentElement.innerHTML))!==null){links.push(match[1])}var srcRegex=/src=[&quot;&#39;](https?:\/\/[^\s&quot;&#39;\x3c\x3e]+)[&quot;&#39;]/gi;var srcMatch;while((srcMatch=srcRegex.exec(document.documentElement.innerHTML))!==null){links.push(srcMatch[1])}var unique=[...new Set(links)].filter(function(l){return !l.includes('.css')&&!l.includes('.js')&&!l.includes('.png')&&!l.includes('.jpg')});if(unique.length===0){alert(decodeURIComponent('%D9%85%D9%81%D9%8A%D8%B4%20%D9%81%D8%B1%D9%8A%D9%85%D8%A7%D8%AA%20%D9%87%D9%86%D8%A7%20%D9%8A%D8%A7%20%D8%B1%D9%8A%D8%B3!'));return}var div=document.createElement('div');div.style.cssText='position:fixed;top:10%;left:10%;width:80%;height:80%;background:#1e272e;color:#fff;z-index:9999999;padding:20px;overflow:auto;border:3px solid #f1c40f;box-shadow:0 0 30px rgba(0,0,0,0.9);border-radius:15px;direction:rtl;font-family:Arial;';div.innerHTML='%3Ch2 style=\&quot;color:#f1c40f;text-align:center;margin-top:0;\&quot;%3E'+decodeURIComponent('%D8%A7%D9%84%D9%81%D8%B1%D9%8A%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%B3%D8%AD%D9%88%D8%A8%D8%A9')+'%3C/h2%3E%3Cdiv style=\&quot;display:flex;justify-content:center;gap:15px;margin-bottom:20px;\&quot;%3E%3Cbutton onclick=\&quot;var t=\`\`;document.querySelectorAll(`.bk-copy-input`).forEach(i=\%3Et+=i.value+\`\\n\`);navigator.clipboard.writeText(t).then(()=\%3Ealert(decodeURIComponent(\`%D8%AA%D9%85%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE!\`)))\&quot; style=\&quot;background:#8e44ad;color:white;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;font-weight:bold;\&quot;%3E'+decodeURIComponent('%D9%86%D8%B3%D8%AE%20%D8%A7%D9%84%D9%83%D9%84')+'%3C/button%3E%3Cbutton onclick=\&quot;this.parentElement.parentElement.remove()\&quot; style=\&quot;background:#e74c3c;color:white;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;font-weight:bold;\&quot;%3E'+decodeURIComponent('%D8%A5%D8%BA%D9%84%D8%A7%D9%82')+'%3C/button%3E%3C/div%3E';unique.forEach(function(l){div.innerHTML+='%3Cdiv style=\&quot;display:flex;gap:10px;margin-bottom:10px;background:#2a323d;padding:10px;border-radius:8px;\&quot;%3E%3Cinput class=\&quot;bk-copy-input\&quot; type=\&quot;text\&quot; value=\&quot;'+l+'\&quot; style=\&quot;flex:1;padding:8px;background:#111;color:#fff;border:1px solid #555;direction:ltr;text-align:left;\&quot; readonly%3E%3Cbutton onclick=\&quot;navigator.clipboard.writeText(this.previousSibling.value).then(()=\%3Ealert(decodeURIComponent(\`%D8%AA%D9%85%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE!\`)))\&quot; style=\&quot;background:#2ecc71;color:#fff;padding:8px 15px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;\&quot;%3E'+decodeURIComponent('%D9%86%D8%B3%D8%AE')+'%3C/button%3E%3Ca href=\&quot;'+l+'\&quot; target=\&quot;_blank\&quot; style=\&quot;background:#3498db;color:#fff;padding:8px 15px;text-decoration:none;border-radius:5px;font-weight:bold;display:flex;align-items:center;\&quot;%3E'+decodeURIComponent('%D9%81%D8%AA%D8%AD')+'%3C/a%3E%3C/div%3E'});document.body.appendChild(div)})();" class="btn" style="border-color:#3498db; color:#3498db; background:#111; text-decoration: none; display: inline-block; cursor: grab;" title="اسحب هذا الزر إلى شريط الإشارات">🔖 أداة المتصفح (اسحبني لشريط الإشارات)</a>
+                    <a href="javascript:(async function(){var s=function(u){prompt(decodeURIComponent('%D8%AA%D9%85%20%D8%A7%D9%84%D8%B9%D8%AB%D9%88%D8%B1%20%D8%B9%D9%84%D9%89%20%D8%B1%D8%A7%D8%A8%D8%B7:'),u)};var m=document.documentElement.innerHTML.match(/https?:\/\/[^&quot;&#39;\s\x3c\x3e]+?\.(?:mp4|m3u8)[^&quot;&#39;\s\x3c\x3e]*/i);if(m){s(m[0]);return;}var x=[];var srcRegex=/<iframe[^>]+src=[&quot;&#39;](https?:\/\/[^&quot;&#39;]+)[&quot;&#39;]/gi;var match;while((match=srcRegex.exec(document.documentElement.innerHTML))!==null){x.push(match[1])}if(x.length>0){try{var p2='https://corsproxy.io/?'+encodeURIComponent(x[0]);var w2=await fetch(p2);var h2=await w2.text();var m2=h2.match(/https?:\/\/[^&quot;&#39;\s\x3c\x3e]+?\.(?:mp4|m3u8)[^&quot;&#39;\s\x3c\x3e]*/i);if(m2){s(m2[0]);return;}}catch(e){}}var r=prompt(decodeURIComponent('%D9%81%D8%B4%D9%84%20%D8%A7%D9%84%D8%AC%D9%84%D8%A8%20%D8%A7%D9%84%D8%AA%D9%84%D9%82%D8%A7%D8%A6%D9%8A.%20%D8%A7%D9%81%D8%AA%D8%AD%20%D8%AF%D9%87%20%D9%81%D9%8A%20%D8%AA%D8%A7%D8%A8%20%D8%AC%D8%AF%D9%8A%D8%AF%20%D9%88%D8%AF%D9%88%D8%B3%20%D8%B9%20%D8%A7%D9%84%D8%A3%D8%AF%D8%A7%D8%A9%20%D8%AA%D8%A7%D9%86%D9%8A:%0A'),x[0]||'');if(r){navigator.clipboard.writeText(r);window.open(r,'_blank');}else{alert(decodeURIComponent('%D9%84%D9%85%20%D9%8A%D8%AA%D9%85%20%D8%A7%D9%84%D8%B9%D8%AB%D9%88%D8%B1%20%D8%B9%D9%84%D9%89%20%D8%A3%D9%8A%20%D9%81%D9%8A%D8%AF%D9%8A%D9%88.'));}})();" class="btn" style="border-color:#e67e22; color:#e67e22; background:#111; text-decoration: none; display: inline-block; cursor: grab;" title="اسحب هذا الزر إلى شريط الإشارات">🎣 صائد الفيديوهات (السحب التلقائي)</a>
+                </div>
             </div>
         </div>
     </div>
@@ -1011,6 +1034,7 @@ window.firebaseConfig = {
             if(url) alert("تم إرسال طلب الاستيراد. تأكد أن الرابط يدعم الوصول الخارجي (CORS).");
         };
 
+        // --- التعديل الذي طلبته لضمان الترتيب المثالي للفولدرات والقنوات ---
         window.handleFileInput = function(event) {
             let file = event.target.files[0];
             if(!file) return;
@@ -1018,30 +1042,62 @@ window.firebaseConfig = {
             reader.onload = function(e) {
                 let contents = e.target.result;
                 let lines = contents.split('\n');
-                let newChannels = [];
                 let currentName = "قناة مستوردة";
+                let currentGroup = "";
+                let addedCount = 0;
+                let targetFolder = window.folderState.currentFolderId;
+
+                let hasGroups = lines.some(l => l.includes('group-title=') && !l.includes('group-title="المقاطع المحددة"'));
+
                 lines.forEach(line => {
                     line = line.trim();
                     if(line.startsWith('#EXTINF:')) {
+                        let groupMatch = line.match(/group-title="([^"]+)"/);
+                        if(groupMatch) currentGroup = groupMatch[1].trim();
+                        else currentGroup = "";
+                        
                         let parts = line.split(',');
                         currentName = parts.length > 1 ? parts[1].trim() : "قناة مستوردة";
                     } else if(line.startsWith('http')) {
-                        newChannels.push({ type: 'channel', name: currentName, link: line, playMode: 'internal' });
+                        let newChannel = { type: 'channel', name: currentName, link: line, playMode: 'internal' };
+                        
+                        if (hasGroups) {
+                            if (currentGroup && currentGroup !== "المقاطع المحددة" && currentGroup !== "") {
+                                let folderItem = window.folderState.folders["main"].find(item => item.type === 'folder' && item.name === currentGroup);
+                                let folderId;
+                                if (folderItem) {
+                                    folderId = folderItem.id;
+                                } else {
+                                    folderId = 'folder_' + Date.now() + Math.random().toString(36).substr(2, 5);
+                                    window.folderState.folders["main"].push({ type: "folder", id: folderId, name: currentGroup });
+                                    window.folderState.folders[folderId] = [];
+                                }
+                                if(!window.folderState.folders[folderId]) window.folderState.folders[folderId] = [];
+                                window.folderState.folders[folderId].push(newChannel);
+                            } else {
+                                if(!window.folderState.folders["main"]) window.folderState.folders["main"] = [];
+                                window.folderState.folders["main"].push(newChannel);
+                            }
+                        } else {
+                            if(!window.folderState.folders[targetFolder]) window.folderState.folders[targetFolder] = [];
+                            window.folderState.folders[targetFolder].push(newChannel);
+                        }
+                        
                         currentName = "قناة مستوردة";
+                        addedCount++;
                     }
                 });
-                if(newChannels.length > 0) {
-                    let cur = window.folderState.currentFolderId;
-                    if(!window.folderState.folders[cur]) window.folderState.folders[cur] = [];
-                    window.folderState.folders[cur].push(...newChannels);
+
+                if(addedCount > 0) {
                     window.renderCurrentFolder();
                     window.autoSave();
-                    alert("تم استيراد " + newChannels.length + " قناة بنجاح!");
+                    alert("تم استيراد " + addedCount + " قناة بنجاح بنفس الترتيب والمجلدات الأصلية!");
                 } else { alert("لم يتم العثور على روابط صالحة."); }
             };
             reader.readAsText(file);
         };
         window.handleFolderFileInput = window.handleFileInput; 
+        // ----------------------------------------------------------------
 
         window.downloadAsHTML = function() {
             let htmlContent = document.documentElement.outerHTML;
@@ -1052,9 +1108,6 @@ window.firebaseConfig = {
             a.click();
         };
 
-        // =========================================================================
-        // الدالة المساعدة
-        // =========================================================================
         window.robustFetchHTML = async function(urlToFetch) {
             let encodedUrl = encodeURIComponent(urlToFetch);
             let proxies = [
@@ -1084,9 +1137,6 @@ window.firebaseConfig = {
             throw new Error("All proxies failed or blocked");
         };
 
-        // =========================================================================
-        // الدبابة الشاملة للفحص العميق - الكود الجديد كما طلبت
-        // =========================================================================
         window.fetchCurrentIframe = async function() {
             let url = window.currentPlayingUrl;
             
@@ -1114,7 +1164,6 @@ window.firebaseConfig = {
                 if (!src.startsWith('http')) return;
 
                 let lower = src.toLowerCase();
-                // فلترة الروابط اللي ملهاش لازمة (صور، ستايلات، إحصائيات)
                 if (lower.includes('wp-json') || lower.includes('wp-content') ||
                     lower.match(/\.(png|jpg|jpeg|gif|css|js|woff|svg|ico)$/i) ||
                     lower.includes('google-analytics') || lower.includes('facebook') || lower.includes('twitter')) {
@@ -1162,18 +1211,15 @@ window.firebaseConfig = {
                     }
                 }
 
-                // 1. الإطارات الصريحة
                 let iframes = doc.querySelectorAll('iframe');
                 iframes.forEach((ifr) => addExtractedLink(ifr.getAttribute('src')));
 
-                // 2. الروابط المخفية في السكريبتات
                 let iframeRegex = /<iframe[^>]+src=\\?["']([^"'>\\]+)\\?["']/gi;
                 let match;
                 while ((match = iframeRegex.exec(html)) !== null) {
                     addExtractedLink(match[1]);
                 }
 
-                // 3. فحص إضافي عن أي رابط بينتهي بـ m3u8 أو php جوه الكود
                 let linkRegex = /(https?:\/\/[^\s"'<>]+?(?:m3u8|php|embed)[^\s"'<>]*)/gi;
                 while ((match = linkRegex.exec(html)) !== null) {
                     addExtractedLink(match[1]);
@@ -1188,7 +1234,6 @@ window.firebaseConfig = {
             }
         };
 
-        // دالة إنشاء وعرض نافذة النتائج الجديدة
         window.showDeepScanModal = function(extractedLinks) {
             window.closeMultiManageModal(); 
             let existing = document.getElementById("deep-scan-modal");
